@@ -3,6 +3,7 @@ import { Colors } from '../../constants/colors';
 import { useState } from "react";
 import ImagePicker from "./ImagePicker";
 import LocationPicker from "./LocationPicker";
+import Button from "../UI/Button";
 
 function PlaceForm(){
     const [enteredTitle, setEnteredTitle] = useState('');
@@ -19,6 +20,7 @@ function PlaceForm(){
             </View>
             <ImagePicker/>
             <LocationPicker />
+            <Button>Add place</Button>
         </ScrollView>
     );
 }

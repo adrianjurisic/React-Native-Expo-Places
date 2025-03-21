@@ -3,7 +3,7 @@ import OutlinedButton from '../UI/OutlinedButton'
 import { Colors } from "../../constants/colors";
 import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from "expo-location";
 import { useEffect, useState } from "react";
-import { getMapPreview } from "../../util/location";
+import { getAddress, getMapPreview } from "../../util/location";
 import { useNavigation, useRoute, useIsFocused } from "@react-navigation/native";
 
 function LocationPicker({onPickedLocation}){
@@ -28,7 +28,13 @@ function LocationPicker({onPickedLocation}){
     }, [route, isFocused]);
 
     useEffect(() => {
-        onPickedLocation(pickedLocation);
+        async function handleLocation(){
+            if(pickedLocation){
+                const address = await getAddress(pickedLocation.lat, pickedLocation.lng);
+                onPickedLocation({...pickedLocation, address: address});
+            }
+        }
+        handleLocation();
     },[pickedLocation, onPickedLocation]);
 
     async function verifyPermissions() {

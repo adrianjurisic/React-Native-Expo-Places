@@ -33,8 +33,8 @@ function ImagePicker({onTakeImage}){
             aspect: [16, 9],
             quality: 0.5,
         });
-        setPickedImage(image.uri);
-        onTakeImage(image.uri);
+        setPickedImage(image.assets[0].uri);
+        onTakeImage(image.assets[0].uri);
     }
 
     let imagePreview = <Text style={styles.textPreview}>No image taken yet!</Text>;

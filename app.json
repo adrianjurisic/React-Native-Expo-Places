@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.adrian.places"
     },
     "android": {
       "adaptiveIcon": {
@@ -30,7 +31,8 @@
         {
           "cameraPermission": "The needs access to your camera. Do You agree?"
         }
-      ]
-  ]
+      ],
+      "expo-sqlite"
+    ]
   }
 }

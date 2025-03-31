@@ -14,6 +14,7 @@ import AppLoading from 'expo-app-loading';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  /*
   const [dbInitialized, setDbInitialized] = useState(false);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function App() {
   if(!dbInitialized){
     return <AppLoading />;
   }
+  */
 
   return (
     <>
